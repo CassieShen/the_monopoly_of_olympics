@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="utf-8">
 	<!-- 引入 ECharts 文件 -->
-	<script src="echarts.min.js"></script>
-	<script src="jquery-3.2.1.min.js"></script>
-	<script src="bootstrap.min.js"></script>
-	<link rel="stylesheet" href="bootstrap.min.css" />
+	<script src="./js/jquery-3.2.1.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./js/bootstrap.min.css" />
 	<style>
 		#scatter div {
 			width: 1000px!important;
@@ -22,13 +22,13 @@
 		<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">在奥运赛场上，总有些国家长踞固定项目的榜首，在自己的传统强势项目上持续发光发热。早在1992年巴塞罗那奥运会，囊括了当时几乎所有的NBA顶尖选手的美国男篮表现得如梦如幻，被人们冠以“梦之队”的称号。之后这一说法渐渐流行起来，那些在单项上的地位长期无法为其他国家所撼动的实力无人能比的队伍也开始被称赞为“梦之队”，其中最常见的除了美国篮球，还有中国乒乓球队、中国跳水队和韩国射箭队。</div>
 	  <div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">“梦之队”们凭借着自身的强势，成为各自项目的霸主对该项目进行着不同时间段的“统治”，也就是实现了对一些奥运项目的垄断。然而奥运中的这些垄断现象并不仅仅与体育运动项目本身相关，本文将通过历届奥运会单项和总成绩的数据来对奥运会的被垄断程度以及相关影响因素进行定性和定量分析，从而探究奥运垄断背后的意义。</div>
 
-		<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
-		<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
-		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
-		<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
-		<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
-		<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
-		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="./js/echarts-all-3.js"></script>
+		<script type="text/javascript" src="./js/world.js"></script>
+		<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+		<script type="text/javascript" src="./js/china.js"></script>
+		<script type="text/javascript" src="./js/bmap.min.js"></script>
+		<script type="text/javascript" src="./js/dataTool.min.js"></script>
+		<script src="./js/jquery-1.10.2.js"></script>
 
 		<div id="myTabs">
 
@@ -45,7 +45,7 @@
 					<div style="text-align:left;line-height:50px;width:100%;font-size:24px;">一、“梦之队”的奥运“统治”</div>
 
 					<div style="text-align:left;line-height:50px;width:100%;font-size:22px;">1、“梦之队”的“统治”程度</div>
-					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">量化一个国家对某个项目的“统治”程度，可以从金牌数占比和累计贡献率两种算法考虑。金牌数占比即为某一个国家所获得的总计金牌数量占该项目所产生的所有金牌数的比重，另一方面累计贡献率是基于金银铜牌的不同分量，将该国获得的所有金银铜牌分别赋值4、2、1分，金银铜牌数分别乘以所对应的分值，再相加得出一个国家的总得分，再与该项目所产生奖牌数的总分数做比，即累计贡献率＝（该国所获金牌数＊4＋该国所获银牌数＊2+该国所获铜牌数＊1）／（金牌总数＊4+银牌总数＊2+铜牌总数＊1）。（备注：此处累计贡献率算法对金银铜牌分别赋值4、2、1分参考了《沈阳体育学院学报》2004年4月，第23卷02期的《我国与奥运强国竞技体育实力的比较研究》。）</div>
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">量化一个国家对某个项目的“统治”程度，可以从金牌数占比和累计贡献率两种算法考虑。金牌数占比即为某一个国家所获得的总计金牌数量占该项目所产生的所有金牌数的比重，另一方面累计贡献率是基于金银铜牌的不同分量，将该国获得的所有金银铜牌分别赋值4、2、1分，金银铜牌数分别乘以所对应的分值，再相加得出一个国家的总得分，再与该项目所产生奖牌数的总分数做比，即累计贡献率＝（该国所获金牌数＊4＋该国所获银牌数＊2+该国所获铜牌数＊1）／（金牌总数＊4+银牌总数＊2+铜牌总数＊1）。</div>
 
 					<!--pie0-->
 					<div id="pie0" style="width: 100%;height:300px;"></div>
@@ -604,7 +604,7 @@
 						// 指定图表的配置项和数据
 						option = {
 								title: {
-										text: '跳水GINI＝0.6661',
+										text: '跳水GINI＝0.7356',
 										left: 'center',
 										top: '10%'
 
@@ -686,7 +686,7 @@
 													// 指定图表的配置项和数据
 												option = {
 														title: {
-																text: '射箭GINI＝0.6662',
+																text: '射箭GINI＝0.7356',
 																left: 'center',
 																top: '10%'
 
@@ -768,7 +768,7 @@
 																// 指定图表的配置项和数据
 															option = {
 																	title: {
-																			text: '篮球GINI＝0.6266',
+																			text: '篮球GINI＝0.7356',
 																			left: 'center',
 																			top: '10%'
 
@@ -2938,7 +2938,7 @@
 							},
 
 							legend: {
-								data: ['人均GDP与总分'],
+								data: ['GDP与总分'],
 								left: 'center'
 							},
 							xAxis: [
@@ -2946,8 +2946,8 @@
 									type: 'value',
 									min: 5,
 									max: 13,
-									name: '人均GDP（对数）',
-									nameGap: 10,
+									name: 'GDP（对数）',
+									nameGap: 16,
 									nameTextStyle: {
 										color: '#000000',
 										fontSize: 12
@@ -2982,7 +2982,7 @@
 							],
 							series: [
 								{
-									name: '人均GDP与总分',
+									name: 'GDP与总分',
 									type: 'scatter',
 									data: [[6.38910425, 1.09861229],
 									[8.28051282, 0.],
@@ -3178,7 +3178,7 @@
 						myChart.setOption(option);
 					</script>
 					<div style="text-align:center;line-height:25px;width:100%;margin:10px 0;">图10:国家人口与总得分关系&GDP与总得分关系</div>
-					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">上图横坐标分别为人口和人均GDP，纵坐标为国家的奥运总得分，由此可看出两个自变量人口和人均GDP对国家奥运成绩的影响，根据散点的分布可得出一个国家的奥运总得分均与其人口和人均GDP呈正相关的关系。再结合前文用基尼系数推断出的不论奥运总分还是单项均存在很强的垄断，可以说明这种垄断与人口和人均GDP是正相关的。</div>
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">上图横坐标分别为人口和GDP，纵坐标为国家的奥运总得分，由此可看出两个自变量人口和GDP对国家奥运成绩的影响，根据散点的分布可得出一个国家的奥运总得分均与其人口和GDP呈正相关的关系。再结合前文用基尼系数推断出的不论奥运总分还是单项均存在很强的垄断，可以说明这种垄断与人口和GDP是正相关的。</div>
 
 					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;font-size:22px;">2、各国奖牌数与总得分之间关系</div>
 					<div style="width:100%;">
@@ -4195,14 +4195,14 @@
 
 					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;font-size:22px;">3、 线性回归模型定量分析人口&GDP与总得分</div>
 					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;font-size:18px;">1) ‘y ~ xg + xp’</div>
-					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">将国家的奥运总得分记为y，自变量国家的人均GDP和人口分别记作xg和xp，用xg和xp来预测y，即有'y ~ xg + xp'，此函数模型，R平方为0.23，拟合度差，所以该模型不适合。</div>
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">将国家的奥运总得分记为y，自变量国家的GDP和人口分别记作xg和xp，用xg和xp来预测y，即有'y ~ xg + xp'，此函数模型，R平方为0.23，拟合度差，所以该模型不适合。</div>
 					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">备注：在统计学中对变量进行线行回归分析，采用最小二乘法进行参数估计时，R平方为回归平方和与总离差平方和的比值，表示总离差平方和中可以由回归平方和解释的比例，这一比例越大越好，模型越精确，回归效果越显著。R平方介于0~1之间，越接近1，回归拟合效果越好，一般认为超过0.8的模型拟合优度比较高。</div>
 
 					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;font-size:18px;">2) 'y_log ~ xg_log + xp_log'</div>
 					<p style="text-align: center; "><img src="./图11.jpg" style="width: 100%; " /></p>
 					<div style="text-align:center;line-height:25px;width:100%;margin:10px 0;">图12:人口&GDP与总得分的幂律关系模型</div>
-					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">该模型取用GDP的对数xg_log和人口的对数xp_log来预测国家奥运总得分的对数y_log，即有'y_log ~ xg_log + xp_log'，如图11里的后两幅图所示两个自变量人均GDP和人口与因变量呈明显的正相关关系，且两个变量都很显著。</div>
-					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">对该模型的评估，算出R平方为0.614，即有61.4％的y（总分）能被该模型的预测变量所解释，依据上文提到的r平方的参考标准，该模型拟合度较好。两个自变量的系数（coef）分别为1.1233和0.7616，显示因变量和自变量呈正相关，得分y随着人口和人均GDP的增长而增长。再者看该模型的p值，p值指的是当原假设为真的时候样本观察结果出现极端结果的概率，t值等于系数除以标准误,t值和p>|t|均是看回归结果是否显著,p>|t|越小越显著,表明回归效果越好，此处p值对应0，表明回归结果显著，符合原假设模型。结合以上几点衡量，该模型合适。</div>
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">该模型取用GDP的对数xg_log和人口的对数xp_log来预测国家奥运总得分的对数y_log，即有'y_log ~ xg_log + xp_log'，如图11里的后两幅图所示两个自变量GDP和人口与因变量呈明显的正相关关系，且两个变量都很显著。</div>
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">对该模型的评估，算出R平方为0.614，即有61.4％的y（总分）能被该模型的预测变量所解释，依据上文提到的r平方的参考标准，该模型拟合度较好。两个自变量的系数（coef）分别为1.1233和0.7616，显示因变量和自变量呈正相关，得分y随着人口和gdp的增长而增长。再者看该模型的p值，p值指的是当原假设为真的时候样本观察结果出现极端结果的概率，t值等于系数除以标准误,t值和p>|t|均是看回归结果是否显著,p>|t|越小越显著,表明回归效果越好，此处p值对应0，表明回归结果显著，符合原假设模型。结合以上几点衡量，该模型合适。</div>
 
 
 				</div>
@@ -4210,7 +4210,7 @@
 					<div style="text-align:left;line-height:50px;width:100%;font-size:24px;">三、结论</div>
 
 					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">综合上述分析，首先，被冠以“梦之队”的队伍们本身对于自身项目有很强的垄断趋势，这体现在奖牌数的获得和在某一固定时段内的持续优势。其次，除去熟知的梦之队项目，其他各单项也大多被某一国家或某几个国家所垄断，获奖国家间的获奖情况和实力差距悬殊。然而，不单单是奥运单项的垄断程度高，奥运会的总体成绩各国也很悬殊，并且从历届奥运会看来，整个奥运会也是几乎被以美国为首的几个国家所垄断着。</div>
-					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">奥运会单项和总体的高度被垄断的情况与国家的人口和人均GDP有着直接关系，且是正相关的。在具体研究了奖牌数、总得分和人口、GDP的关系之后，通过建立各种函数模型，找到相对契合的人口、GDP对奥运成绩的正相关的幂律关系，证实了这两个因素对于奥运会垄断程度的影响。人口数量大且人均GDP高的国家，也就是人们所熟悉的当今国际舞台上的大国强国才是真正统治着奥运会，这同时体现出奥运的本质并不仅仅是运动，而是提供了一些大国强国进行国力角逐的舞台。</div>
+					<div style="text-align:left;line-height:25px;width:100%;margin:10px 0;">奥运会单项和总体的高度被垄断的情况与国家的人口和GDP有着直接关系，且是正相关的。在具体研究了奖牌数、总得分和人口、GDP的关系之后，通过建立各种函数模型，找到相对契合的人口、GDP对奥运成绩的正相关的幂律关系，证实了这两个因素对于奥运会垄断程度的影响。人口数量大且GDP高的国家，也就是人们所熟悉的当今国际舞台上的大国强国才是真正统治着奥运会，这同时体现出奥运的本质并不仅仅是运动，而是提供了一些大国强国进行国力角逐的舞台。</div>
 
 										<div style="text-align:left;line-height:40px;width:100%;margin:10px 0;font-size:16px;">(附：历届奥运会举办地)</div>
 
@@ -4399,7 +4399,9 @@
 		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">奥林匹克官网：https://www.olympic.org</div>
 		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">Kaggle网：https://www.kaggle.com</div>
 		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">参考文献：</div>
-		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">白海波，郭权：《我国与奥运强国竞技体育实力的比较研究》，［J］. 沈阳体育学院学报，2004年4月，第23卷02期。</div>
+		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">《我国与奥运强国竞技体育实力的比较研究》</div>
+		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">《竞争平衡视域下世界乒乓球运动发展研究》</div>
+		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">《奥运10强国等级项目群特征研究》</div>
 		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">指导老师：王成军</div>
 		<div style="text-align:right;line-height:25px;width:100%;margin:10px 0;font-size:16px;">制作：2013级本科新闻班 沈越</div>
 
@@ -4408,3 +4410,4 @@
 </body>
 
 </html>
+
